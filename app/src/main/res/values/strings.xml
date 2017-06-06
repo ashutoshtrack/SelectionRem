@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">TestRreminderUI</string>
+    <string name="select_dueDate">Select Country</string>
+    <string-array name="due_dates">
+        <item>1 day prior</item>
+        <item>2 days prior</item>
+
+        <item>3 days prior</item>
+        <item>4 days prior</item>
+        <item>5 days prior</item>
+        <item>6 days prior</item>
+        <item> A week  prior</item>
+
+
+
+
+    </string-array>
+</resources>

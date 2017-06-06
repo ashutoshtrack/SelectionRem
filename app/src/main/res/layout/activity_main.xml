@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.widget.RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:touchscreenBlocksFocus="true"
+    tools:context="com.example.ashutosh.testrreminderui.MainActivity">
+
+    <android.support.design.widget.TabLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:background="@color/colorPrimary"
+        app:tabIndicatorColor="#e8e001"
+        app:tabSelectedTextColor="#f5f903"
+        app:tabTextColor="@android:color/background_light"
+        android:id="@+id/myTab">
+
+        <android.support.design.widget.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Camera" />
+
+        <android.support.design.widget.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Reminders" />
+
+        <android.support.design.widget.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Edits" />
+    </android.support.design.widget.TabLayout>
+
+    <view
+        android:id="@+id/mypager"
+        class="android.support.v4.view.ViewPager"
+        id="@+id/view"
+        layout_below="@+id/tabLayout"
+        layout_centerHorizontal="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/myTab" />
+</android.widget.RelativeLayout>
