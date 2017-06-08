@@ -7,24 +7,42 @@
     tools:context="com.example.ashutosh.testrreminderui.MainActivity">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="221dp"
-        android:text="Camera Module yaha implement hoga"
-        android:textColor="?attr/actionModeSplitBackground"
-        android:textSize="18sp" />
 
-    <Button
-        android:id="@+id/button"
+    <TextureView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/textView"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="83dp"
-        android:text="Button" />
+        android:id="@+id/textureView"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true" />
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/videoOnlineImageButton"
+        android:contentDescription="video_button"
+        android:src="@mipmap/btn_video_online"
+        android:layout_marginBottom="36dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="49dp" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/cameraImageButton2"
+        android:contentDescription="camera_button"
+        android:src="@mipmap/btn_camera"
+        android:layout_alignTop="@+id/videoOnlineImageButton"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="57dp" />
+
+    <Chronometer
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/chronometer"
+        android:visibility="invisible"
+        android:textColor="#ff0000"
+        android:textSize="25dp"
+        android:layout_above="@+id/videoOnlineImageButton"
+        android:layout_alignStart="@+id/videoOnlineImageButton" />
 
 </RelativeLayout>
