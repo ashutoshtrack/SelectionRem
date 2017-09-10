@@ -4,15 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#ccf"
     android:addStatesFromChildren="false"
     tools:context="com.example.ashutosh.testrreminderui.ThirdActivity">
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:padding="10dp"
+        android:orientation="vertical">
+
         <EditText
             android:id="@+id/doctitle"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="28dp"
@@ -25,142 +29,222 @@
         <EditText
             android:id="@+id/amount"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_below="@+id/doctitle"
             android:layout_marginTop="18dp"
             android:ems="10"
-            android:hint="Kitna Mall Dena Hai"
+            android:hint="Document Amount"
             android:inputType="numberDecimal" />
 
-        <EditText
-            android:id="@+id/dateset"
-            android:layout_width="250dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="18dp"
-            android:ems="10"
-            android:hint="Jama karne ka Din"
-            android:inputType="date"
-            android:layout_below="@+id/amount"
-            android:layout_alignLeft="@+id/spinner"
-            android:layout_alignStart="@+id/spinner" />
-
-        <ImageButton
-            android:id="@+id/cal"
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@android:color/transparent"
-            app:srcCompat="@android:drawable/ic_menu_my_calendar"
-            android:layout_alignTop="@+id/dateset"
-            android:layout_toRightOf="@+id/dateset"
-            android:layout_toEndOf="@+id/dateset"
-            android:layout_marginLeft="18dp"
-            android:layout_marginStart="18dp" />
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/dateset"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/amount"
+                android:layout_marginLeft="7dp"
+                android:layout_marginStart="7dp"
+                android:layout_marginTop="20dp"
+                android:onClick="dateclicker"
+                android:ems="10"
+                android:hint="Due Date"
+                android:inputType="date" />
+
+            <ImageButton
+                android:id="@+id/cal"
+                android:layout_width="80dp"
+                android:layout_height="match_parent"
+                android:layout_alignTop="@+id/dateset"
+                android:layout_toEndOf="@+id/dateset"
+                android:layout_toRightOf="@+id/dateset"
+                android:background="@android:color/transparent"
+                app:srcCompat="@android:drawable/ic_menu_my_calendar"
+                android:scaleType="fitCenter"/>
+
+        </LinearLayout>
 
         <Spinner
             android:id="@+id/spinner"
             android:layout_width="200dp"
             android:layout_height="40dp"
-            android:background="?attr/colorControlHighlight"
-            android:hint="Reminder Date"
             android:layout_below="@+id/dateset"
-            android:layout_alignLeft="@+id/textView"
-            android:layout_alignStart="@+id/textView"
-            android:layout_marginTop="13dp" />
+            android:layout_marginLeft="7dp"
+            android:layout_marginStart="7dp"
+            android:layout_marginTop="13dp"
+            android:background="?attr/colorControlHighlight"
+            android:hint="Reminder Date" />
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/textView1"
             android:layout_width="wrap_content"
-            android:layout_height="18dp"
+            android:layout_height="25dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/spinner"
             android:layout_marginLeft="12dp"
             android:layout_marginStart="12dp"
             android:layout_marginTop="21dp"
-            android:text="Scan Maar Le"
-            android:textSize="18sp"
-            android:layout_below="@+id/spinner"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true" />
-
-        <ImageButton
-            android:id="@+id/daba"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/textView"
-            android:layout_alignStart="@+id/textView"
-            android:layout_below="@+id/textView"
-            android:layout_marginLeft="19dp"
-            android:layout_marginStart="19dp"
-            android:layout_marginTop="11dp"
-            android:background="@android:color/transparent"
-            android:onClick="dabaya"
-            app:srcCompat="@android:drawable/ic_menu_camera" />
-
-        <ImageView
-            android:id="@+id/imgdikha"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            app:srcCompat="@color/colorPrimaryDark"
-            android:layout_alignTop="@+id/textView"
-            android:layout_alignLeft="@+id/webkhol"
-            android:layout_alignStart="@+id/webkhol" />
-
-        <EditText
-            android:id="@+id/notes"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:ems="10"
-            android:hint="Note Daal De"
-            android:inputType="textMultiLine"
-            android:layout_below="@+id/daba"
-            android:layout_alignLeft="@+id/textView"
-            android:layout_alignStart="@+id/textView"
-            android:layout_toStartOf="@+id/webkhol"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true"
-            android:layout_toLeftOf="@+id/webkhol" />
-
-        <EditText
-            android:id="@+id/urldala"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/notes"
-            android:layout_alignStart="@+id/notes"
-            android:layout_below="@+id/notes"
-            android:layout_marginTop="17dp"
-            android:ems="10"
-            android:hint="URL daal bina http:// ke"
-            android:inputType="textPersonName"
-            android:layout_alignRight="@+id/dateset"
-            android:layout_alignEnd="@+id/dateset" />
-
-        <ImageButton
-            android:id="@+id/webkhol"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@android:color/transparent"
-            android:onClick="webkholdia"
-            app:srcCompat="@android:drawable/ic_menu_send"
-            android:layout_alignTop="@+id/urldala"
-            android:layout_toLeftOf="@+id/cal"
-            android:layout_toStartOf="@+id/cal" />
+            android:text="Scan Here"
+            android:textSize="20sp" />
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:orientation="horizontal"
+            android:layout_height="wrap_content">
+
+            <ImageButton
+                android:id="@+id/daba"
+                android:layout_width="80dp"
+                android:layout_height="match_parent"
+                android:layout_alignLeft="@+id/textView1"
+                android:layout_alignStart="@+id/textView1"
+                android:layout_below="@+id/textView1"
+                android:layout_marginLeft="19dp"
+                android:layout_marginStart="19dp"
+                android:layout_marginTop="11dp"
+                android:scaleType="fitCenter"
+                android:background="@android:color/transparent"
+                android:onClick="dabaya"
+                app:srcCompat="@android:drawable/ic_menu_camera" />
+
+            <ImageView
+                android:id="@+id/imgdikha"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:background="#ffcccc"
+                android:layout_marginLeft="100dp"/>
+        </LinearLayout>
+
+        <RadioGroup
+            android:id="@+id/radioGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/daba"
+            android:layout_alignStart="@+id/daba"
+            android:layout_below="@+id/daba"
+            android:layout_marginTop="33dp"
+            android:paddingLeft="20dp"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/radioDefault"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="DefaultTimeClicke"
+                android:text="Default Time @ 9 a.m   " />
+
+            <RadioButton
+                android:id="@+id/radioCustom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="CustomTimeClicke"
+                android:text="Custom Time" />
+        </RadioGroup>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <RadioGroup
+                android:id="@+id/radioGroup2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/daba"
+                android:layout_alignStart="@+id/daba"
+                android:layout_below="@+id/daba"
+                android:layout_marginTop="5dp"
+                android:paddingLeft="20dp"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/radioNonR"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="NonRepeatClicke"
+                    android:text="Non Repeating" />
+
+                <RadioButton
+                    android:id="@+id/radioRepeat"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="RepeatClicke"
+                    android:text="Repeating @ 24hr interval" />
+            </RadioGroup>
+
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/notes"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_alignLeft="@+id/textView1"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignStart="@+id/textView1"
+            android:layout_below="@+id/radioGroup"
+            android:layout_marginTop="15dp"
+            android:ems="10"
+            android:hint="Short Note"
+            android:inputType="text" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <EditText
+                android:id="@+id/urldala"
+                android:layout_width="300dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:layout_alignEnd="@+id/dateset"
+                android:layout_alignLeft="@+id/notes"
+                android:layout_alignRight="@+id/dateset"
+                android:layout_alignStart="@+id/notes"
+                android:layout_below="@+id/notes"
+                android:layout_marginTop="15dp"
+                android:ems="10"
+                android:hint="URL"
+                android:inputType="textPersonName" />
+
+            <ImageButton
+                android:id="@+id/webkhol"
+                android:layout_width="80dp"
+                android:layout_height="match_parent"
+                android:layout_alignTop="@+id/urldala"
+                android:layout_toLeftOf="@+id/cal"
+                android:layout_toStartOf="@+id/cal"
+                android:scaleType="fitCenter"
+                android:background="@android:color/transparent"
+                android:onClick="webkholdia"
+                app:srcCompat="@android:drawable/ic_menu_send" />
+        </LinearLayout>
+
+        <LinearLayout
             android:id="@+id/linearLayout"
-            android:layout_below="@+id/urldala"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            android:layout_marginTop="12dp">
+            android:layout_below="@+id/urldala"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal">
 
             <Button
                 android:id="@+id/cancelbaby"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1.01"
+                android:onClick="CancelAlarm"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
                 android:text="Cancel" />
 
             <Button
@@ -168,12 +252,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:onClick="AlarmSaver"
                 android:text="Save" />
         </LinearLayout>
 
 
+    </LinearLayout>
 
-
-
-    </RelativeLayout>
 </ScrollView>

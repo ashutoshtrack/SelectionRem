@@ -42,7 +42,7 @@
         android:layout_alignStart="@+id/txtNme"
         android:layout_below="@+id/txtNme"
         android:layout_marginTop="11dp"
-        android:text="30 ke pelle bhar bhai"
+        android:text="is policy ka amount"
         android:textSize="18sp"
         android:textStyle="italic" />
 
@@ -57,5 +57,47 @@
         android:layout_marginRight="11dp"
         android:background="@android:color/transparent"
         app:srcCompat="@android:drawable/ic_menu_delete" />
+
+    <TextView
+        android:id="@+id/datedText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Dated :  "
+        android:layout_alignBaseline="@+id/duedateText"
+        android:layout_alignBottom="@+id/duedateText"
+        android:layout_toLeftOf="@+id/duedateText"
+        android:layout_toStartOf="@+id/duedateText"
+        android:layout_marginRight="12dp"
+        android:layout_marginEnd="12dp" />
+
+    <TextView
+        android:id="@+id/duedateText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/dustbin"
+        android:layout_alignParentTop="true"
+        android:layout_alignRight="@+id/dustbin"
+        android:layout_marginTop="9dp"
+        android:text="duedateT" />
+
+    <TextView
+        android:id="@+id/noteT"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Note : "
+        android:layout_alignBottom="@+id/imager"
+        android:layout_alignLeft="@+id/txtAmt"
+        android:layout_alignStart="@+id/txtAmt" />
+
+    <TextView
+        android:id="@+id/noteText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/noteT"
+        android:layout_marginLeft="6dp"
+        android:layout_marginStart="6dp"
+        android:layout_toEndOf="@+id/noteT"
+        android:layout_toRightOf="@+id/noteT"
+        android:text="If Note Is There" />
 
 </RelativeLayout>
